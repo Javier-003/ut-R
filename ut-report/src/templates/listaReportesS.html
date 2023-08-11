@@ -1,0 +1,123 @@
+{% extends './plantilla.html' %}
+
+
+{% block body %}
+<h1 class="text-center mt-5 mb-3 text-primary">LISTA DE REPORTE SOLUCIONADOS y DENEGADOS</h1>
+<div class="container">
+    <div class="card shadow">
+        <div class="card-body" style="background-color: rgb(41, 28, 28);">
+            <form action="/insertReporte" method="POST">
+                <div class="row mb-3">
+                    <div class="col">
+                        <label style="color: rgb(255, 255, 255);">fecha del reporte:</label>
+                        <input type="text" class="form-control mb-3" name="fecha">
+                    </div>
+                    <div class="col">
+                        <label style="color: rgb(255, 255, 255);">tipo del reporte:</label>
+                        <input type="text" class="form-control mb-3" name="tipo">
+                    </div>
+                    <div class="col">
+                        <label style="color: rgb(255, 255, 255);">descripcion del reporte:</label>
+                        <input type="text" class="form-control mb-3" name="descripcion">
+                    </div>
+                    <div class="col">
+                        <label style="color: rgb(255, 255, 255);">estado del reporte:</label>
+                        <select type="text" class="form-control mb-3" name="estadoU">
+                            
+                            <Option value="1">enviado</Option>
+                            <Option value="2">recibido</Option>
+                            <Option value="3">en Proceso</Option>
+                            <Option value="4">En Revición</Option>
+                            <Option value="5">denegado</Option>
+                            <Option value="6">Solucionado</Option>
+                            <Option value="7">Tomado En Cuenta</Option>
+
+
+                        </select>
+                    </div>
+                    <div class="col">
+                        <button class="btn btn-success mb-3 mt-4" type="submit">Guardar</button>
+                    </div>
+                </div>
+            </form>
+            <table class="table table-bordered">
+                <thead>
+                    <th scope="col">#</th>
+                    <th scope="col">usuario</th>
+                    <th scope="col">fecha</th>
+                    <th scope="col">tipo</th>
+                    <th scope="col">descripcion</th>
+                    <th scope="col">estado</th>
+
+                    <th scope="col">Editar</th>
+                    <th scope="col">Eliminar</th>
+                </thead>
+                <tbody>
+                    <!--declara bucle-->
+                    {% for d in data %}
+                    <tr>
+                        <td>{{d.id}}</td>
+                        <td>{{d.usuario}}</td>
+                        <td>{{d.fechar}}</td>
+                        <td>{{d.tipo}}</td>
+                        <td>{{d.descripcion}}</td>
+                        <td>{{d.estatus}}</td>
+
+                        <td><button class="btn btn-primary btn-sm" id="btn-edit{{d.id}}" data-bs-toggle="modal"
+                                data-bs-target="#modal{{d.id}}">Editar</button></td>
+                        <td><a href=" {{url_for('eliminarReporte',id=d.id)}}" class="btn btn-danger btm-sm">Eliminar</a>
+                        </td>
+                    </tr>
+                    <!--MODAL -->
+                    <div class="modal fade" id="modal{{d.id}}" tabindex="-1" aria-labelledby="exampleModalLabel"
+                        aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h1 class="modal-title fs-5" id="exampleModalLabel">{{d.tipo}}</h1>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <form action="/actualizarReporte/{{d.id}}" method="POST">
+                                        <div>
+                                            <label>estado: {{d.usuario}}</label>
+                                        </div>
+                                        <div>
+                                            <label>fecha: {{d.fechar}}</label>
+                                        </div>
+                                        <div>
+                                            <label>descripcion: {{d.descripcion}}</label>
+                                        </div>
+                                        <div>
+                                            <label>estado: {{d.tipo}}</label>
+                                        </div>
+                                        <div>
+                                            <label>estado: {{d.estatus}}</label>
+                                        </div>
+                                        <select type="text" class="form-control mb-3" name="estado"
+                                            value="{{d.estado}}">
+                                            <Option value="select"></Option>
+                                            <Option value="enviado">enviado</Option>
+                                            <Option value="recibido">recibido</Option>
+                                            <Option value="en proceso">en revision</Option>
+                                            <Option value="solucionado">solucionado</Option>
+                                            <Option value="denegado">denegado</Option>
+                                        </select>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="submit" class="btn btn-primary">Save</button>
+                                </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}

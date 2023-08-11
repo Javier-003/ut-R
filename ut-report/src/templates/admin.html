@@ -1,0 +1,42 @@
+{% extends './plantilla.html' %}
+
+
+{% block body %}
+
+<section class="general container" id="redactar">
+    <h2>revisar</h2>
+    <div class="general-content">
+        <div class="card" style="width: 18rem;">
+            <img src="https://i.pinimg.com/564x/7a/9b/b0/7a9bb0203e73624e36438d8e7b9a93ea.jpg"
+                class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">administrar reportes</h5>
+                <p class="card-text"></p>
+                <a class="btn btn-primary" href="{{ url_for('listaReportes') }}" style="color: rgb(255, 255, 255);">visualizar</a></button>
+            </div>
+        </div>
+
+        <div class="card" style="width: 18rem;">
+            <img src="https://i.pinimg.com/564x/7a/9b/b0/7a9bb0203e73624e36438d8e7b9a93ea.jpg"
+                class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">administrar reportes solucionados</h5>
+                <p class="card-text"></p>
+                <a class="btn btn-primary" href="{{ url_for('listaReportesS') }}" style="color: rgb(255, 255, 255);">visualizar</a></button>
+            </div>
+        </div>
+
+        <div class="card" style="width: 18rem;">
+            <img src="https://i.pinimg.com/originals/3e/fb/28/3efb280df520df8e02e1fae1df64773e.png"
+                class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">administrar usuario</h5>
+                <p class="card-text"></p>
+                <a class="btn btn-primary" href="{{ url_for('ListaUsuarios') }}" style="color: rgb(255, 255, 255);">visualizar</a></button>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+{% endblock %}

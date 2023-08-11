@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"
+        integrity="sha384-fbbOQedDUMZZ5KreZpsbe1LCZPVmfTnH7ois6mU1QK+m14rQ1l2bGBq41eYeM/fS"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>UT-Report</title>
+
+    <link rel="stylesheet" href="{{url_for ('static', filename='css/stylesH.css')}}">
+</head>
+
+<body>
+
+    <header class="header"
+        style="background-image: url(https://i.pinimg.com/originals/43/76/b3/4376b3fd536ec175fff17ef7d46961fc.jpg)">
+        <div class="menu container">
+            <a href="{{url_for ('administrador')}}" class="logo"><img
+                    src="https://i.pinimg.com/originals/63/f5/78/63f578552b6de8e47d5bb09157cba4c6.png" alt="logo"
+                    width="250"></a>
+            <input type="checkbox" id="menu">
+            <label for="menu">
+                <img src="{{url_for ('static', filename='img/menu.png')}}" class="menu-icono" alt="">
+            </label>
+            <nav class="navbar">
+                <ul>
+                    <li><a href="#" style="color:white;text-decoration:none">Inicio</a></li>
+                    <li><a href="#redactar" style="color:white;text-decoration:none">Visualizar</a></li>
+                    <li><a href="#contact" style="color:white; text-decoration:none">Contacto</a></li>
+                    <li><a href="{{ url_for('logout') }}" style="color:white; text-decoration:none ">Cerrar Sesión</a><li></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="header-content container">
+            <div class="header-txt">
+                <h1>UT-Report</h1>
+                <p>
+                    bienvenido a UT-Report un espacio hecho especialmente para todo
+                    aquel estudiante, profesor, o persona que tenga contacto con la institución
+                    pueda redactar un reporte, queja o sugerencia hacia la institución.
+                </p>
+                <a href="utacapulco.edu.mxutauta" class="btn-1">conoce la UTA</a>
+            </div>
+        </div>
+    </header>
+
+    <div>
+        {% block body %}
+
+        {% endblock %}
+    </div>
+
+    <div class="container content text-dark" id="contact" style="min-height: 100vh; padding-bottom: 100px;">
+        <h2 class="text-center py-4">CONTACTANOS</h2>
+        <div class="row justify-content-center"> <!-- Añadido justify-content-center para centrar el contenido -->
+            <div class="col-md-6">
+                <div class="contact-info">
+                    <i class="fa fa-map-marker"></i>
+                    <span class="text-dark text-center">Av. Comandante Bouganville L5 Fracc. Lomas de Costa Azul C.P. 39830, Acapulco de Juarez,
+                        GRO</span>
+                </div>
+                <div class="contact-info">
+                    <i class="fa fa-phone"></i>
+                    <span class="text-dark text-center">Rectoría: 7446886416</span>
+                </div>
+                <div class="contact-info">
+                    <i class="fa fa-phone"></i>
+                    <span class="text-dark text-center">Servicios Escolares: 7446886415</span>
+                </div>
+                <div class="contact-info">
+                    <i class="fa fa-phone"></i>
+                    <span class="text-dark text-center">Administración y Finanzas: 7446886413</span>
+                </div>
+                <div class="contact-info">
+                    <i class="fa fa-envelope"></i>
+                    <span class="text-dark text-center">Email: universidad@utacapulco.edu.mx</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="py-4"></div>
+    <footer class="footer bg-light text-center py-4 fixed-bottom">
+        <p class="text-dark">hecho por ATM para la UTA</p>
+    </footer>
+
+
+
+    <!-- fin de la pagina-->
+
+</body>
+
+</html>

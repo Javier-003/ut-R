@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <title>UT-REPORT</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="esti.css" />
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"
+        integrity="sha384-fbbOQedDUMZZ5KreZpsbe1LCZPVmfTnH7ois6mU1QK+m14rQ1l2bGBq41eYeM/fS"
+        crossorigin="anonymous"></script>
+    <script src="{{url_for('static',filename='js/base.js')}}"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+    </style>
+</head>
+
+<body>
+
+    <!-- Barra de navegacion -->
+    <div class="w3-top">
+        <div class="w3-bar w3-black w3-card">
+            <a class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hide-large w3-right"
+                href="javascript:void(0)" onclick="myFunction()" title="Toggle Navigation Menu"
+                style="flex-direction: column;"><i class="fa fa-bars"></i></a>
+            <a href="#" class="w3-bar-item w3-button w3-padding-large">Inicio</a>
+            <a href="#Redactar" class="w3-bar-item w3-button w3-padding-large w3-hide-small">redactar</a>
+            <a href="#contact" class="w3-bar-item w3-button w3-padding-large w3-hide-small">Contact</a>
+            <a href="#" class="w3-bar-item w3-button w3-padding-large w3-hide-small">Nosotros</a>
+        </div>
+    </div>
+
+    <!--barra de navegacion responsiva -->
+    <div id="navDemo" class="w3-bar-block w3-black w3-hide w3-hide-large w3-hide-medium w3-top" style="margin-top:46px">
+        <a href="#Redactar" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">redactar</a>
+        <a href="#contact" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">contacto</a>
+        <a href="#" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">Nosotros</a>
+    </div>
+    <div class="w3-content" style="max-width:2000px;margin-top:46px">
+
+        <div class="mySlides w3-display-container w3-center">
+            <img src="https://utacapulco.edu.mx/wp-content/uploads/2022/01/Ing-De-Ges-Soft-800x445.png"
+                style="width:50%">
+            <div class="w3-display-bottommiddle w3-container w3-text-white w3-padding-32 w3-hide-small">
+                <h3 style="color: black;">UT-Report</h3>
+                <p><b style="color: black;">procuramos siempre ayudarte.</b></p>
+            </div>
+        </div>
+
+
+        <!-- ACERCA DE -->
+        <div class="w3-container w3-content w3-center w3-padding-64" style="max-width:800px" id="acercaDe">
+            <h2 class="w3-wide">Acerca de </h2>
+            <p class="w3-opacity"><i>UT-Report</i></p>
+            <p class="w3-justify">UT-Repor esta hecho con el fin de brindar un apartado de buzon de voz a la intitucion
+                UTA
+                (Universidad Tecnologica de Acapulco), en donde
+                todo aquel alumno que tenga alguna inconformidad con la institucióno quiera brindar alguna sugerenciaque
+                pueda
+                aportar al bien de la institución tambien las pueden hacer aqui.
+            </p>
+
+        </div>
+
+        <!-- seccion de buzon -->
+        <div class="w3-black" id="Redactar">
+            <div class="container w3-content w3-padding-64 " style="max-width:800px ">
+                <h2 class="w3-wide w3-center"></h2>
+                <p class="w3-opacity w3-center"><i>Escoje lo que desaeas hacer</i></p><br>
+                <div class="w3-row-padding w3-center-center w3-padding-30 " style="margin:0 -10px ">
+                    <div class="w3-third w3-margin-bottom">
+                        <img src="https://th.bing.com/th/id/R.c1d23387cda7e31c36c54730b66ca575?rik=q47EK2uYpeleng&pid=ImgRaw&r=0"
+                            alt="Quejas" style="width:100%" class="w3-hover-opacity">
+                        <div class="w3-container w3-white">
+                            <p><b>reporte</q></b></p>
+                            <p>redacta tus quejas, inconformidades o sugerencia a la institución.</p>
+                            <button class="w3-button w3-black w3-margin-bottom"
+                                onclick="document.getElementById('quejas').style.display='block'">Redactar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ventana de quejas -->
+        <div id="quejas" class="w3-modal">
+            <div class="w3-modal-content w3-animate-top w3-card-4">
+                <header class="w3-container w3-teal w3-center w3-padding-32">
+                    <span onclick="document.getElementByI('Quejas').style.display='none'"
+                        class="w3-button w3-teal w3-xlarge w3-display-topright"></span>
+                    <h2 class="w3-wide"><i class="w3-margin-right"></i>REPORTE</h2>
+                </header>
+                <div class="w3-container">
+                    <p><label>se enviara al administracion para su revicion </label></p>
+                    <form action="/usuarioReporte" method="POST">
+                        <div class="col">
+                            <label style="color: rgb(0, 0, 0);">fecha del reporte (año-mes-dia):</label>
+                            <input type="text" class="form-control mb-3" name="fecha">
+                        </div>
+                        <div class="col">
+                            <label style="color: rgb(0, 0, 0);">tipo del reporte:</label>
+                            <input type="text" class="form-control mb-3" name="tipo">
+                        </div>
+                        <div class="col">
+                            <label style="color: rgb(0, 0, 0);">descripcion del reporte:</label>
+                            <input type="text" class="form-control mb-3" name="descripcion">
+
+                            <button class="w3-button w3-block w3-teal w3-padding-16 w3-section w3-right"
+                                type="submit">Enviar <i class="fa fa-check"></i></button>
+                    </form>
+                    <button class="btn btn-success mb-3 mt-4" type="submit" href="#Redactar">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- seccion de contacto -->
+    <div class="w3-container w3-content w3-padding-64" style="max-width:800px" id="contact">
+        <h2 class="w3-wide w3-center">CONTACTANOS</h2>
+        <div class="w3-row w3-padding-32">
+            <div class="w3-col m6 w3-large w3-margin-bottom">
+                <i class="fa fa-map-marker" style="width:30px"></i> Av. Comandante Bouganville L5 Fracc.
+                Lomas de Costa Azul C.P. 39830, Acapulco de Juarez, GRO<br>
+                <i class="fa fa-phone" style="width:30px"></i> Rectoría: 7446886416<br>
+                <i class="fa fa-phone" style="width:30px"></i> Servicios Escolares: 7446886415<br>
+                <i class="fa fa-phone" style="width:30px"></i> Administración y Finanzas: 7446886413<br>
+                <i class="fa fa-envelope" style="width:30px"> </i> Email: universidad@utacapulco.edu.mx<br>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- fin de la pagina-->
+
+
+    <!-- Footer -->
+    <footer class="w3-container w3-padding-64 w3-center w3-opacity w3-light-grey w3-xlarge">
+        <a href="https://www.facebook.com/people/Oficial-Universidad-Tecnol%C3%B3gica-de-Acapulco/100063862541593/"><i
+                class="fa fa-facebook-official w3-hover-opacity"></i></a>
+        <i class="fa fa-instagram w3-hover-opacity"></i>
+        <a href="https://twitter.com/Utacapulco1"> <i class="fa fa-twitter w3-hover-opacity"></i></a>
+        <i class="fa fa-linkedin w3-hover-opacity"></i>
+        <a
+            href="https://accounts.google.com/ServiceLogin/signinchooser?hl=es&passive=true&continue=https%3A%2F%2Fwww.google.com%2F&ec=GAZAmgQ&flowName=GlifWebSignIn&flowEntry=ServiceLogin">
+            <i class="fa fa-envelope w3-hover-opacity"></i></a>
+        <p class="w3-medium">hecho para <a
+                href="https://utacapulco.edu.mx/2022/01/28/universidad-tecnologica-de-acapulco/" target="_blank">UTA</a>
+        </p>
+    </footer>
+
+    <script>
+
+        // abrir y cerrar barra de acciones en pantallas pequeñas 
+        function myFunction() {
+            var x = document.getElementById("navDemo");
+            if (x.className.indexOf("w3-show") == -1) {
+                x.className += " w3-show";
+            } else {
+                x.className = x.className.replace(" w3-show", "");
+            }
+        }
+
+
+    </script>
+
+</body>
+
+</html>

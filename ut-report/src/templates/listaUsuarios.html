@@ -1,0 +1,101 @@
+{% extends './plantilla.html' %}
+
+
+{% block body %}
+<h1 class="text-center mt-5 mb-3 text-primary">LISTA DE USUARIOS</h1>
+<div class="container">
+    <div class="card shadow">
+        <div class="card-body" style="background-color: rgb(41, 28, 28);">
+            <form action="/insertUsuario" method="POST">
+                <div class="row mb-3">
+                    <div class="col">
+                        <label style="color: rgb(255, 255, 255);">nombre:</label>
+                        <input type="text" class="form-control mb-3" name="nombre">
+                    </div>
+                    <div class="col">
+                        <label style="color: rgb(255, 255, 255);">correo:</label>
+                        <input type="text" class="form-control mb-3" name="correo">
+                    </div>
+                    <div class="col">
+                        <label style="color: rgb(255, 255, 255);">contraseña:</label>
+                        <input type="text" class="form-control mb-3" name="contraseña">
+                    </div>
+                    <div class="col">
+                        <label style="color: rgb(255, 255, 255);">rol:</label>
+                        <select type="text" class="form-control mb-3" name="rol">
+                            <Option value="select"></Option>
+                            <Option value="1">administrador</Option>
+                            <Option value="2">alumno</Option>
+                            <Option value="3">profesor</Option>
+                            <Option value="4">padre de familia</Option>
+                        </select>
+                    </div>
+                    <div class="col">
+                        <button class="btn btn-success mb-3 mt-4" type="submit">Guardar</button>
+                    </div>
+                </div>
+            </form>
+            <table class="table table-bordered">
+                <thead>
+                    <th scope="col">#</th>
+                    <th scope="col">nombre</th>
+                    <th scope="col">correo</th>
+                    <th scope="col">contraseña</th>
+                    <th scope="col">rol</th>
+
+                    <th scope="col">Editar</th>
+                    <th scope="col">Eliminar</th>
+                </thead>
+                <tbody>
+                    <!--declara bucle-->
+                    {% for d in data %}
+                    <tr>
+                        <td>{{d.id}}</td>
+                        <td>{{d.nombre}}</td>
+                        <td>{{d.correo}}</td>
+                        <td>{{d.contraseña}}</td>
+                        <td>{{d.descripción}}</td>
+
+                        <td><button class="btn btn-primary btn-sm" id="btn-edit{{d.id}}" data-bs-toggle="modal"
+                                data-bs-target="#modal{{d.id}}">Editar</button></td>
+                        <td><a href=" {{url_for('eliminarUsuario',id=d.id)}}" class="btn btn-danger btm-sm">Eliminar</a>
+                        </td>
+                    </tr>
+                    <!--MODAL -->
+                    <div class="modal fade" id="modal{{d.id}}" tabindex="-1" aria-labelledby="exampleModalLabel"
+                        aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h1 class="modal-title fs-5" id="exampleModalLabel"></h1>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <form action="/actualizarReporte/{{d.id}}" method="POST">
+                                        <label>estado:</label>
+                                        <select type="text" class="form-control mb-3" name="estado"
+                                            value="{{d.estado}}">
+                                            <Option value=""></Option>
+                                            <Option value="2" style="color: black;">alumno</Option>
+                                            <Option value="3" style="color: black;">profesor</Option>
+                                            <Option value="4" style="color: black;">padre de familia</Option>
+                                        </select>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="submit" class="btn btn-primary">Save</button>
+                                </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+
+
+{% endblock %}

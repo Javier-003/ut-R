@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"
+        integrity="sha384-fbbOQedDUMZZ5KreZpsbe1LCZPVmfTnH7ois6mU1QK+m14rQ1l2bGBq41eYeM/fS"
+        crossorigin="anonymous"></script>
+    <title>UT-Report</title>
+    <link rel="stylesheet" href="{{url_for ('static', filename='css/stylesH.css')}}">
+</head>
+
+<body>
+
+    <header class="header"
+        style="background-image: url(https://i.pinimg.com/originals/43/76/b3/4376b3fd536ec175fff17ef7d46961fc.jpg)">
+        <div class="menu container">
+            <a href="#" class="logo"><img
+                    src="https://i.pinimg.com/originals/63/f5/78/63f578552b6de8e47d5bb09157cba4c6.png" alt="logo"
+                    width="250"></a>
+            <input type="checkbox" id="menu">
+            <label for="menu">
+                <img src="#" class="menu-icono" alt="">
+            </label>
+            <nav class="navbar">
+                <ul>
+                    <li><a href="#redactar" style="color:white; text-decoration:none">Redactar</a></li>
+                    <li><a href="#ATM" style="color:white; text-decoration:none">Nosotros</a></li>
+                    <li><a href="#contact" style="color:white; text-decoration:none">Contacto</a></li>
+                    <li><a data-bs-toggle="modal" data-bs-target="#instruccion" style="color:white; text-decoration:none">Ayuda</a></li>
+                    <li><a href="{{ url_for('logout') }}" style="color:white; text-decoration:none ">Cerrar Sesión</a><li>
+                </ul>
+            </nav>
+        </div>
+        <div class="header-content container">
+            <div class="header-txt">
+                <h1>UT-Report</h1>
+                <p>
+                    bienvenido a UT-Report un espacio hecho especialmente para todo
+                    aquel estudiante, profesor, o persona que tenga contacto con la institución
+                    pueda redactar un reporte, queja o sugerencia hacia la institución.
+                </p>
+                <a href="utacapulco.edu.mxutauta" class="btn-1">conoce la UTA</a>
+            </div>
+        </div>
+    </header>
+
+
+    <section class="general container" id="redactar">
+        <h2>Redactar</h2>
+        <div class="general-content">
+            <div class="card" style="width: 18rem;">
+                <img src="https://i.pinimg.com/750x/c2/1d/8e/c21d8eaeb1f9e226bfa8124f0c0fb6d0.jpg" class="card-img-top"
+                    alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Reporte</h5>
+                    <p class="card-text"></p>
+                    <button class="btn btn-primary" id="queja" data-bs-toggle="modal"
+                        data-bs-target="#reportes">Redactar</button>
+                </div>
+            </div>
+
+            <div class="card" style="width: 18rem;">
+                <img src="https://i.pinimg.com/564x/7a/9b/b0/7a9bb0203e73624e36438d8e7b9a93ea.jpg" class="card-img-top"
+                    alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">tus reportes</h5>
+                    <p class="card-text"></p>
+                    <a class="btn btn-primary" href="{{ url_for('listaReportesU') }}"
+                        style="color: rgb(255, 255, 255);">visualizar</a></button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="info-1" id="ATM">
+        <h2 style="text-align: center; color: white;">Nuestro equipo</h2>
+        <div class="general-content">
+            <div class="general-4 txt">
+                <h3 style="color: black;">Jason</h3>
+                <p style="color: black;">
+                    Lider de proyecto
+                </p>
+            </div>
+            <div class="general-5 txt">
+                <h3 style="color: black;">Alfredo</h3>
+                <p style="color: black;">
+                    Documentador
+                </p>
+            </div>
+            <div class="general-6 txt">
+                <h3 style="color: black;">Jatziry</h3>
+                <p style="color: black;"> 
+                    Documentadora
+                </p>
+            </div>
+            <div class="general-7 txt">
+                <h3 style="color: black;">Monserrat</h3>
+                <p style="color: black;">
+                    Analista
+                </p>
+            </div>
+            <div class="general-8 txt">
+                <h3 style="color: black;">Javier</h3>
+                <p style="color: black;">
+                    Desarrollador backend
+                </p>
+            </div>
+            <div class="general-9 txt">
+                <h3 style="color: black;">Hugo</h3>
+                <p style="color: black;"> 
+                    Desarollador frontend
+                </p>
+            </div>
+
+        </div>
+    </section>
+
+    <div class="container content text-dark" id="contact" style="min-height: 100vh; padding-bottom: 100px;">
+        <h2 class="text-center py-4">CONTACTANOS</h2>
+        <div class="row justify-content-center"> <!-- Añadido justify-content-center para centrar el contenido -->
+            <div class="col-md-6">
+                <div class="contact-info">
+                    <i class="fa fa-map-marker"></i>
+                    <span class="text-dark text-center">Av. Comandante Bouganville L5 Fracc. Lomas de Costa Azul C.P.
+                        39830, Acapulco de Juarez,
+                        GRO</span>
+                </div>
+                <div class="contact-info">
+                    <i class="fa fa-phone"></i>
+                    <span class="text-dark text-center">Rectoría: 7446886416</span>
+                </div>
+                <div class="contact-info">
+                    <i class="fa fa-phone"></i>
+                    <span class="text-dark text-center">Servicios Escolares: 7446886415</span>
+                </div>
+                <div class="contact-info">
+                    <i class="fa fa-phone"></i>
+                    <span class="text-dark text-center">Administración y Finanzas: 7446886413</span>
+                </div>
+                <div class="contact-info">
+                    <i class="fa fa-envelope"></i>
+                    <span class="text-dark text-center">Email: universidad@utacapulco.edu.mx</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="py-4"></div>
+    <footer class="footer bg-light text-center py-4 fixed-bottom">
+        <p class="text-dark">hecho por ATM para la UTA</p>
+    </footer>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+        crossorigin="anonymous"></script>
+
+
+
+    <!---perfil de usuario y logout--->
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel"
+        style="background-color: rgba(0, 0, 255, 0.699);">
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="offcanvasRightLabel">perfil</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+            <h1 style="justify-content: center;">usuario</h1>
+
+
+            {% for usuario in datos %}
+            <li>{{ usuario.nombre }}</li>
+            {% endfor %}
+
+
+            <p>No se encontraron datos de usuarios.</p>
+
+            
+
+        </div>
+    </div>
+
+
+
+    <!---MODAL Sugerencia--->
+    <div class="modal fade" id="reportes" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Enviar Reporte</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <p><label for="fecha">Se enviará a servicios escolares para su correspondida revisión</label></p>
+                    <form action="/usuarioReporte" method="POST">
+                        <div class="col">
+                            <label for="fecha">Usuario:</label>
+                            <input required="" type="text" class="form-control mb-3" name="nombre" value="">
+                        </div>
+                        <div class="col">
+                            <label for="fecha">Fecha del reporte (año-mes-dia):</label>
+                            <input required="" type="text" class="form-control mb-3" name="fecha" value="">
+                        </div>
+                        <div class="col">
+                            <label for="tipo">Tipo del reporte:</label>
+                            <select type="text" readonly class="form-control-plaintext"
+                                placeholder="escoge el tipo de reporte" name="tipo" value="">
+                                <option value="Queja">Queja</option>
+                                <option value="Sugerencia">Sugerencia</option>
+                            </select>
+                        </div>
+                        <div class="col">
+                            <label for="descripcion">Descripción del reporte:</label>
+                            <input required="" type="text" class="form-control mb-3" name="descripcion">
+                        </div>
+                        <button class="btn btn-primary" type="submit">Enviar <i class="fa fa-check"></i></button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- Modal intruccion-->
+    <div class="modal fade" id="instruccion">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+
+                <!-- Cabecera del modal -->
+                <div class="modal-header">a
+                    <h4 class="modal-title">ayuda</h4>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">&times;</button>
+                </div>
+
+                <!-- Contenido del modal -->
+                <div class="modal-body">
+                    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                        <!-- Indicadores -->
+                        <ul class="carousel-indicators">
+                            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                            <li data-target="#myCarousel" data-slide-to="1"></li>
+                            <li data-target="#myCarousel" data-slide-to="2"></li>
+                        </ul>
+
+                        <!-- Slides -->
+                        <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
+                            <div class="carousel-indicators">
+                                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0"
+                                    class="active" aria-current="true" aria-label="Slide 1"></button>
+                                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
+                                    aria-label="Slide 2"></button>
+                                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
+                                    aria-label="Slide 3"></button>
+                            </div>
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <img src="https://i.pinimg.com/originals/89/ed/3a/89ed3abe537dbcf9fab928d1bb8cdfb5.jpg" class="d-block w-100" alt="Imagen 1">
+                                    <div class="carousel-caption d-none d-md-block">
+                                       
+                                        <p style="color: black; text-align: center; height: 1px;">escogemos la casilla reporte y precionamos redactar.</p>
+                                    </div>
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="https://i.pinimg.com/originals/00/36/4b/00364bd34939b403c52ba48a7f620401.jpg" class="d-block w-100" alt="Imagen 2">
+                                    <div class="carousel-caption d-none d-md-block">
+                                        
+                                        <p style="color: rgb(0, 0, 0); text-align: center; height: 1px;">Rellenamos los campos requeridos.</p>
+                                    </div>
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="https://i.pinimg.com/originals/f4/05/87/f405871c30fd54d484f96c59528bf612.png" class="d-block w-100" alt="Imagen 3">
+                                    <div class="carousel-caption d-none d-md-block">
+                                        
+                                        <p style="color: rgb(0, 0, 0); text-align: center; height: 1px;">Una vez rellando los campos requerido precionamos enviar.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <button class="carousel-control-prev" type="button"
+                                data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Previous</span>
+                            </button>
+                            <button class="carousel-control-next" type="button"
+                                data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Next</span>
+                            </button>
+                        </div>
+
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+
+</body>
+
+</html>
